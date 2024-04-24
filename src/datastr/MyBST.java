@@ -59,5 +59,31 @@ public class MyBST <Ttype>{
 
     }
 
+    public void print()throws Exception{
+        if(isEmpty()) throw new Exception("IS EMPTEE");
+
+        printRcursivePreOrder(root);
+
+
+
+
+    }
+
+    private void printRcursivePreOrder(MyTreeNode<Ttype> node){
+        System.out.println(node.getElement());
+
+        if(node.getLeft() != null){
+            System.out.println(" LC: " + node.getLeft().getElement() + "[ " + node.getElement() + "]");
+            printRcursivePreOrder(node.getLeft());
+        }
+
+        if(node.getRight() != null){
+            System.out.println(" LC: " + node.getRight().getElement() + "[ " + node.getElement() + "]");
+            printRcursivePreOrder(node.getRight());
+        }
+
+    }
+
+
 
 }
